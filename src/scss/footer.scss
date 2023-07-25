@@ -1,0 +1,104 @@
+.footer {
+  @include adaptive-hero(height, 100, 77);
+  background-color: $burger-color;
+  display: flex;
+  align-items: center;
+  @media (min-width: 1280px) {
+    height: 100px;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-hero(max-width, 360, 200);
+    width: 100%;
+
+    @media (min-width: 1280px) {
+      max-width: 360px;
+    }
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: $text-footer-logo;
+    font-family: Montserrat;
+    @include adaptive-hero(font-size, 12, 8);
+    font-weight: 500;
+    line-height: 125%;
+
+    @media (min-width: 1280px) {
+      font-size: 12px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 33px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    &-link {
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-hero(max-width, 492, 320);
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &__tel {
+    color: $whiteF;
+    font-family: Montserrat;
+    @include adaptive-hero(font-size, 16, 10);
+    font-weight: 700;
+    line-height: 95%;
+    white-space: nowrap;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+    }
+  }
+
+  &__address {
+    max-width: 220px;
+    width: 100%;
+    color: $whiteF;
+    font-family: Montserrat;
+    @include adaptive-hero(font-size, 16, 10);
+    font-weight: 500;
+    line-height: 125%;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+    }
+  }
+}

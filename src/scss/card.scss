@@ -1,0 +1,16 @@
+.card {
+  @include adaptive-hero(height, 515, 211);
+  overflow: hidden;
+
+  & iframe {
+    @include adaptive-hero(height, 515, 211);
+  }
+
+  @media (min-width: 1280px) {
+    height: 515px;
+
+    & iframe {
+      height: 515px;
+    }
+  }
+}

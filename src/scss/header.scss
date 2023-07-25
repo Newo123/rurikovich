@@ -1,0 +1,246 @@
+@import 'fonts.scss';
+@import 'functions.scss';
+@import 'mixins.scss';
+@import './vars.scss';
+
+.header {
+  background-color: $header-color;
+  @include adaptive-hero(height, 60, 50);
+  position: relative;
+  z-index: 13;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  @media (min-width: 1280px) {
+    height: 60px;
+  }
+
+  &__burger {
+    @include adaptive-hero(height, 22, 17);
+    @include adaptive-hero(width, 31, 26);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    & span {
+      background-color: $burger-color;
+      height: 3px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      content: '';
+      background-color: $burger-color;
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      content: '';
+      background-color: $burger-color;
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      & span {
+        transform: scale(0);
+      }
+
+      &::before {
+        top: 40%;
+        left: 0;
+        transform: rotate(45deg) translate(0, -10%);
+      }
+
+      &::after {
+        top: 40%;
+        left: 0;
+        transform: rotate(-45deg) translate(0, -10%);
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    @include adaptive-hero(gap, 67, 20);
+    height: 100%;
+
+    @media (min-width: 1280px) {
+      gap: 67px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-hero(max-width, 360, 200);
+    width: 100%;
+
+    @media (min-width: 1280px) {
+      max-width: 360px;
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    & a {
+      display: block;
+      color: $primary-text-color;
+      font-family: GetVoIP Grotesque;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__button {
+    background-color: $primary-text-color;
+    color: $whiteF;
+    border-radius: 5px;
+    border: none;
+    max-width: 98px;
+    width: 100%;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 6px 0;
+    cursor: pointer;
+  }
+
+  &__nav {
+    height: 100%;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      @include adaptive-hero(gap, 55, 0);
+
+      @media (min-width: 1280px) {
+        gap: 55px;
+      }
+
+      & > li {
+        height: 100%;
+        display: inline-block;
+        font-size: 12px;
+        font-family: Montserrat;
+        font-weight: 500;
+        line-height: normal;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        position: relative;
+
+        &:hover {
+          text-shadow: 0 0 0.4px $primary-text-color,
+            0 0 0.4px $primary-text-color;
+        }
+      }
+
+      & > li > a {
+        font-size: 12px;
+        font-family: Montserrat;
+        font-weight: 500;
+        line-height: normal;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+          text-shadow: 0 0 0.4px $primary-text-color,
+            0 0 0.4px $primary-text-color;
+        }
+      }
+    }
+  }
+}
+
+.header-nav {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  top: 100%;
+  left: -40px;
+  z-index: 5;
+  background-color: $whiteF;
+  border-radius: 0px 0px 10px 10px;
+  gap: 37px 60px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  height: 0;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 150px;
+
+    span {
+      text-shadow: none;
+      margin-bottom: 15px;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: normal;
+    }
+    & li {
+      & a {
+        text-shadow: none;
+        font-family: Montserrat;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: normal;
+        transition: all 0.2s ease;
+        &:hover {
+          text-shadow: 0 0 0.4px $primary-text-color,
+            0 0 0.4px $primary-text-color;
+        }
+      }
+    }
+  }
+}
+
+.header__nav-list {
+  & li:first-child {
+    &:hover .header-nav {
+      height: auto;
+      padding: 23px 40px 37px;
+    }
+  }
+}

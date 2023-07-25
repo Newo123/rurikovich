@@ -1,0 +1,184 @@
+.welcome {
+  @include adaptive-hero(margin-top, 140, 80);
+  @media (min-width: 1280px) {
+    margin-top: 140px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 43% 57%;
+    border-radius: 15px;
+    border: 1px solid $border-welcome;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      border: none;
+    }
+  }
+
+  &__left {
+    @include adaptive-hero(padding-top, 60, 10);
+    @include adaptive-hero(padding-bottom, 60, 10);
+    @include adaptive-hero(padding-left, 60, 10);
+    padding-right: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+
+    @media (min-width: 1280px) {
+      padding-bottom: 60px;
+      padding-top: 60px;
+      padding-left: 60px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0;
+
+      align-items: center;
+    }
+
+    &-shadow {
+      background-color: rgba(0, 0, 0, 0.35);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    &-player {
+      width: 100%;
+      @include adaptive-hero(height, 580, 124);
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-title {
+      color: $primary-text-color;
+      font-family: Russo One;
+      @include adaptive-hero(font-size, 30, 24);
+      font-weight: 400;
+      line-height: 110%;
+      max-width: 331px;
+
+      @media (min-width: 1280px) {
+        font-size: 30px;
+      }
+
+      @media (max-width: 768px) {
+        align-self: flex-start;
+      }
+    }
+
+    &-description {
+      color: $gray-light;
+      font-family: Montserrat;
+      @include adaptive-hero(font-size, 14, 10);
+      font-weight: 500;
+      line-height: normal;
+
+      @media (min-width: 1280px) {
+        font-size: 14px;
+      }
+    }
+
+    &-advantage {
+      color: $black0;
+      font-family: Montserrat;
+      @include adaptive-hero(font-size, 14, 10);
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      max-width: 305px;
+
+      @media (min-width: 1280px) {
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        max-width: 180px;
+        text-align: center;
+      }
+    }
+
+    &-link {
+      padding: 9px 20px 10px 20px;
+      background-color: $header-color;
+      border-radius: 8px;
+
+      color: $black0;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: normal;
+
+      @media (max-width: 768px) {
+        margin-top: -15px;
+      }
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-shadow {
+      background-color: rgba(0, 0, 0, 0.35);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include adaptive-hero(width, 68, 50);
+    @include adaptive-hero(height, 68, 50);
+    z-index: 2;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.07);
+    }
+
+    @media (min-width: 1280px) {
+      width: 68px;
+      height: 68px;
+    }
+  }
+}

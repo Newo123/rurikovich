@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html/head.html', {
+"title": "Контакты"
+})
+
+<body>
+  @@include('./html/header.html',{})
+  <main>
+    <section class="contacts-page">
+      <div class="contacts-page__container container">
+        <div class="contacts-page__background _lazy">
+          <div class="contacts-page__shadow"></div>
+          <img data-src="@img/video.png" src="@img/1x1.png" alt="">
+        </div>
+        <h1 class="contacts-page__title">Контакты</h1>
+        <div class="contacts-page__info">
+          <p class="contacts-page__address"><span>Встретимся по адресу:</span><br>
+            г. Санкт-Петербург,<br>
+            ул. Профессора Попова, 38Щ</p>
+          <p class="contacts-page__link"><span>тел.:</span> +7 (921) 330-06-66</p>
+          <p class="contacts-page__link"><span>Email:</span> juriporzhichkevich@yandex.ru</p>
+        </div>
+      </div>
+      @@include('./html/card-contacts.html',{})
+    </section>
+
+  </main>
+  @@include('./html/footer.html', {})
+  @@include('./html/success.html', {})
+  @@include('./html/burger.html', {})
+</body>
+
+
+</html>

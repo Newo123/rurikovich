@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html/head.html', {
+"title": "Главная"
+})
+
+<body>
+  @@include('./html/header.html',{})
+  <main>
+    <section class="articles-hero">
+      <div class="articles-hero__img _lazy">
+        <div class="articles-hero__shadow"></div>
+        <img data-src="@img/articles-hero.png" src="@img/1x1.png" alt="">
+      </div>
+      <div class="container articles-hero__container">
+        <h1 class="articles-hero__title">
+          Полезные статьи по уходу за авто
+        </h1>
+      </div>
+    </section>
+  </main>
+  @@include('./html/footer.html', {})
+  @@include('./html/success.html', {})
+  @@include('./html/burger.html', {})
+</body>
+
+
+</html>

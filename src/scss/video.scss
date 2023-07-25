@@ -1,0 +1,40 @@
+.video {
+  @include adaptive-hero(height, 460, 135);
+  width: 100%;
+  position: relative;
+
+  @include adaptive-hero(margin-top, 140, 80);
+
+  @media (min-width: 1280px) {
+    margin-top: 140px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    & img {
+      transition: all 0.3s ease;
+      @include adaptive-hero(width, 68, 50);
+      @include adaptive-hero(height, 68, 50);
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+}

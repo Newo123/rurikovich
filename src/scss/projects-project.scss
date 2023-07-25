@@ -1,0 +1,60 @@
+.projects-project {
+  @include adaptive-hero(margin-top, 60, 30);
+  overflow: hidden;
+
+  @media (min-width: 1280px) {
+    margin-top: 60px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-hero(gap, 74, 34);
+
+    @media (min-width: 1280px) {
+      gap: 74px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptive-hero(gap, 40, 10);
+
+    @media (min-width: 1280px) {
+      gap: 40px;
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__card {
+    @include adaptive-hero(height, 260, 270);
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    @media (min-width: 1280px) {
+      width: 360px;
+      height: 260px;
+    }
+
+    & img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s ease;
+    }
+  }
+}

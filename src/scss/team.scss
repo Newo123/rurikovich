@@ -1,0 +1,166 @@
+.team {
+  @include adaptive-hero(margin-top, 140, 80);
+  display: flex;
+  flex-direction: column;
+  @include adaptive-hero(gap, 74, 34);
+
+  @media (min-width: 1280px) {
+    margin-top: 140px;
+    gap: 74px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.09);
+    }
+  }
+
+  &__title {
+    align-self: center;
+    font-family: Russo One;
+    @include adaptive-hero(font-size, 30, 24);
+    font-weight: 400;
+    line-height: 85%;
+
+    @media (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 100%;
+    max-height: 440px;
+    display: flex;
+    justify-content: center;
+    max-width: 1048px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (max-width: 480px) {
+      max-width: 245px;
+    }
+  }
+
+  &__slider {
+    max-width: 1048px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    border-radius: 10px;
+    max-height: 440px;
+    overflow: hidden;
+    width: 100% !important;
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $whiteF;
+      border-top-left-radius: 10px;
+      max-width: 200px;
+
+      @include adaptive-hero(width, 200, 129);
+      @include adaptive-hero(padding-top, 20, 15);
+      @include adaptive-hero(padding-bottom, 20, 22);
+      @include adaptive-hero(padding-left, 27, 21);
+      padding-right: 4px;
+
+      display: flex;
+      flex-direction: column;
+
+      @include adaptive-hero(gap, 5, 11);
+
+      transform: translateY(100%);
+
+      transition: all 0.5s ease;
+
+      @media (min-width: 1280px) {
+        width: 200px;
+        padding: 20px 4px 20px 27px;
+        gap: 5px;
+      }
+    }
+
+    &-fio {
+      font-family: Montserrat;
+      font-weight: 700;
+      line-height: normal;
+      @include adaptive-hero(font-size, 16, 12);
+
+      @media (min-width: 1280px) {
+        font-size: 16px;
+      }
+    }
+
+    &-job {
+      color: $gray-light;
+      font-family: Montserrat;
+      font-weight: 500;
+      line-height: normal;
+
+      @include adaptive-hero(font-size, 12, 10);
+
+      @media (min-width: 1280px) {
+        font-size: 12px;
+      }
+    }
+
+    &-item {
+      background-color: rgba(255, 211, 54, 0.75);
+      position: relative;
+      margin-right: 2px;
+      transition: all 0.5s ease;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include adaptive-hero(height, 440, 340);
+
+      @media (min-width: 1280px) {
+        height: 440px;
+      }
+
+      & img {
+        position: relative;
+        z-index: -2;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+
+        @include adaptive-hero(height, 440, 340);
+
+        @media (min-width: 1280px) {
+          max-height: 440px;
+        }
+      }
+    }
+  }
+}
+
+.team__slider-item.slick-current {
+  background-color: transparent;
+}
+
+.team__slider-item.slick-current .team__slider-info {
+  transform: translateY(0);
+}

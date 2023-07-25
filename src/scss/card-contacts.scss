@@ -1,0 +1,21 @@
+.card-contacts {
+  overflow: hidden;
+  height: 100% !important;
+  grid-column: 2/2;
+
+  @media (max-width: 768px) {
+    grid-column: auto;
+  }
+
+  & iframe {
+    height: 100% !important;
+  }
+
+  @media (min-width: 1280px) {
+    height: 100% !important;
+
+    & iframe {
+      height: 100% !important;
+    }
+  }
+}

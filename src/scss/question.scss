@@ -1,0 +1,137 @@
+.question {
+  @include adaptive-hero(margin-top, 140, 80);
+
+  @media (min-width: 1280px) {
+    margin-top: 140px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-hero(gap, 74, 46);
+    overflow: hidden;
+
+    @media (min-width: 1280px) {
+      gap: 74px;
+    }
+  }
+
+  &__title {
+    align-self: center;
+    color: $primary-text-color;
+    text-align: center;
+    font-family: Russo One;
+    @include adaptive-hero(font-size, 30, 24);
+    font-weight: 400;
+    line-height: 85%;
+
+    @media (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-hero(gap, 20, 10);
+    width: 100%;
+
+    @media (min-width: 1280px) {
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    @include adaptive-hero(padding-top, 17, 10);
+    @include adaptive-hero(padding-left, 31, 20);
+    @include adaptive-hero(padding-right, 31, 10);
+    @include adaptive-hero(padding-bottom, 17, 10);
+
+    border-radius: 10px;
+    border: 1px solid $header-color;
+    background: rgba(217, 217, 217, 0);
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+
+    @media (min-width: 1280px) {
+      padding: 17px 31px 18px 31px;
+    }
+
+    &-arrow {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    &-title {
+      color: $primary-text-color;
+      font-family: Montserrat;
+      @include adaptive-hero(font-size, 16, 10);
+      font-weight: 400;
+      line-height: 125%;
+      width: 55%;
+
+      @media (min-width: 1280px) {
+        font-size: 16px;
+      }
+    }
+
+    &-text {
+      color: $primary-text-color;
+      font-family: Montserrat;
+      @include adaptive-hero(font-size, 16, 10);
+      font-weight: 400;
+      line-height: 125%;
+      transition: all 0.3s ease;
+
+      max-height: 0;
+      padding-top: 0;
+      opacity: 0;
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+
+      & svg {
+        @include adaptive-hero(width, 17, 16);
+        @include adaptive-hero(height, 11, 9);
+      }
+
+      @media (min-width: 1280px) {
+        gap: 100px;
+
+        & svg {
+          width: 17px;
+          height: 11px;
+        }
+      }
+    }
+  }
+}
+
+.question__card.active .question__card-text {
+  @include adaptive-hero(padding-top, 30, 15);
+  max-height: 100%;
+  opacity: 1;
+
+  @media (min-width: 1280px) {
+    padding-top: 30px;
+    font-size: 16px;
+  }
+}
+
+.question__card.active .question__card-arrow {
+  transform: rotate(180deg);
+}

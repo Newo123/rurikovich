@@ -1,0 +1,125 @@
+.advantages {
+  @include adaptive-hero(margin-top, 140, 80);
+
+  @media (min-width: 1280px) {
+    margin-top: 140px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-hero(gap, 74, 34);
+    align-items: flex-start;
+  }
+
+  &__title {
+    color: #27272f;
+    text-align: center;
+    font-family: Russo One;
+    @include adaptive-hero(font-size, 30, 24);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    @include adaptive-hero(max-width, 350, 200);
+
+    align-self: center;
+
+    @media (min-width: 1280px) {
+      font-size: 30px;
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptive-hero(gap, 40, 10);
+    width: 100%;
+
+    @media (min-width: 1280px) {
+      gap: 40px;
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 550px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 1px solid $border-welcome;
+    padding: 30px;
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+    @include adaptive-hero(height, 260, 174);
+
+    @media (min-width: 1280px) {
+      height: 260px;
+    }
+
+    @media (max-width: 550px) {
+      max-width: 100%;
+    }
+
+    &-title {
+      color: $primary-text-color;
+      font-family: Montserrat;
+      @include adaptive-hero(font-size, 20, 14);
+      font-weight: 700;
+      line-height: normal;
+      @include adaptive-hero(max-width, 120, 100);
+
+      @media (min-width: 1280px) {
+        font-size: 20px;
+        max-width: 120px;
+      }
+    }
+
+    &-description {
+      color: $gray-light;
+      font-family: Montserrat;
+      @include adaptive-hero(font-size, 14, 10);
+      font-weight: 500;
+      line-height: normal;
+      @include adaptive-hero(max-width, 232, 162);
+
+      @media (min-width: 1280px) {
+        font-size: 14px;
+        max-width: 232px;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      @include adaptive-hero(top, 36, 30);
+      @include adaptive-hero(right, 36, 30);
+
+      @include adaptive-hero(width, 90, 66);
+      @include adaptive-hero(height, 90, 66);
+
+      @media (min-width: 1280px) {
+        top: 36px;
+        right: 36px;
+        width: 90px;
+        height: 90px;
+      }
+
+      & img {
+        @include adaptive-hero(width, 90, 66);
+        @include adaptive-hero(height, 90, 66);
+        @media (min-width: 1280px) {
+          width: 90px;
+          height: 90px;
+        }
+      }
+    }
+  }
+}
