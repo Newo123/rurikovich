@@ -24,7 +24,7 @@ export const html = () => {
         context: {
           arr: ['Статьи', 'Проекты', 'О нас', 'Контакты'],
           link: [
-            '#',
+            '@@webRoot/articles-page.html',
             '@@webRoot/project-page.html',
             '@@webRoot/about-page.html',
             '@@webRoot/contacts-page.html',

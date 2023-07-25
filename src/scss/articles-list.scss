@@ -1,0 +1,157 @@
+.articles-list {
+  @include adaptive-hero(margin-top, 100, 80);
+  @include adaptive-hero(margin-bottom, 100, 20);
+
+  @media (min-width: 1280px) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptive-hero(gap, 40, 20);
+
+    @media (min-width: 1280px) {
+      gap: 40px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    @include adaptive-hero(height, 460, 208);
+    overflow: hidden;
+
+    border-radius: 15px;
+    border: 1px solid $border-card;
+    position: relative;
+    @include adaptive-hero(padding-top, 40, 30);
+    @include adaptive-hero(padding-left, 60, 20);
+    @include adaptive-hero(padding-bottom, 40, 30);
+    @include adaptive-hero(padding-right, 60, 20);
+
+    @media (min-width: 1280px) {
+      height: 460px;
+      padding: 40px 60px;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    & > img {
+      position: absolute;
+      @include adaptive-hero(bottom, -70, 0);
+      @include adaptive-hero(right, 0, -140);
+      width: 100%;
+      z-index: -1;
+
+      @media (min-width: 1280px) {
+        bottom: -70px;
+        right: 0;
+      }
+    }
+
+    &-img {
+      position: absolute;
+      @include adaptive-hero(bottom, 60, 20);
+      @include adaptive-hero(right, 60, 20);
+
+      @media (min-width: 1280px) {
+        bottom: 60px;
+        right: 60px;
+      }
+
+      @media (max-width: 768px) {
+        position: static;
+      }
+
+      & img {
+        @include adaptive-hero(width, 240, 60);
+        @include adaptive-hero(height, 240, 60);
+
+        @media (min-width: 1280px) {
+          width: 240px;
+          height: 240px;
+        }
+
+        @media (max-width: 768px) {
+          @include adaptive-hero(width, 240, 98);
+          @include adaptive-hero(height, 240, 98);
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include adaptive-hero(gap, 12, 20);
+    @media (min-width: 1280px) {
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      height: 100%;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    color: $primary-text-color;
+    font-family: Montserrat;
+    @include adaptive-hero(font-size, 20, 14);
+    font-weight: 700;
+    line-height: 110%;
+
+    @media (min-width: 1280px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+      line-height: normal;
+    }
+  }
+
+  &__description {
+    color: $gray-light;
+    font-family: Montserrat;
+    @include adaptive-hero(font-size, 14, 10);
+    font-weight: 500;
+    line-height: normal;
+    @include adaptive-hero(max-width, 232, 102);
+
+    @media (min-width: 1280px) {
+      font-size: 14px;
+      max-width: 232px;
+    }
+  }
+
+  &__more {
+    @include adaptive-hero(margin-top, 104, 0);
+    border-radius: 5px;
+    background: $primary-text-color;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    padding: 5px 14px 6px 15px;
+
+    @media (min-width: 1280px) {
+      margin-top: 104px;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+  }
+}
